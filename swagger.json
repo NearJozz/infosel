@@ -1,12 +1,10 @@
 {
-  "swagger": "2.0",
+  "swagger":"2.0.0",
   "info": {
     "description": "Aplicacion reto de Infosel (Back-End)",
     "version": "1.0.0",
     "title": "Infosel App test"
   },
-  "host": "localhost:8080",
-  "basePath": "/",
   "paths": {
     "/api/registrarUsuario": {
       "post": {
