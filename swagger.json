@@ -1,0 +1,501 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Aplicacion reto de Infosel (Back-End)",
+    "version": "1.0.0",
+    "title": "Infosel App test"
+  },
+  "host": "localhost:8080",
+  "basePath": "/",
+  "paths": {
+    "api/registrarUsuario": {
+      "post": {
+        "tags": ["registrarUsuario"],
+        "parameters": [{
+          "name": "registrarUsuario",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/registrarUsuario"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "Operacion valida",
+            "schema": {
+              "$ref": "#/components/schemas/registrarUsuario_output"
+            }
+          },
+          "400": {
+            "description": "Mensaje de salida, con descripcion del error",
+            "schema": {
+              "$ref": "#/components/schemas/mensajeGral_output"
+            }
+          }
+        }
+      }
+    },
+    "api/login": {
+      "post": {
+        "tags": ["login"],
+        "parameters": [{
+          "name": "login",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/login"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "Obtiene token de authentificacion",
+            "schema": {
+              "$ref": "#/components/schemas/login_output"
+            }
+          },
+          "400": {
+            "description": "Mensaje de salida, con descripcion del error",
+            "schema": {
+              "$ref": "#/components/schemas/mensajeGral_output"
+            }
+          },
+          "401": {
+            "description": "Credenciales invalidas",
+            "schema": {
+              "$ref": "#/components/schemas/mensajeGral_output"
+            }
+          }
+        }
+      }
+    },
+    "api/editarUsuario": {
+      "post": {
+        "tags": ["editarUsuario"],
+        "parameters": [{
+          "name": "editar Usuario",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/editarUsuario"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "retorna la iformacion del usuario",
+            "schema": {
+              "$ref": "#/components/schemas/editarUsuario_output"
+            }
+          },
+          "400": {
+            "description": "Mensaje de salida, con descripcion del error",
+            "schema": {
+              "$ref": "#/components/schemas/mensajeGral_output"
+            }
+          },
+          "401": {
+            "description": "Credenciales invalidas",
+            "schema": {
+              "$ref": "#/components/schemas/mensajeGral_output"
+            }
+          }
+        }
+      }
+    },
+    "api/abono": {
+      "post": {
+        "tags": ["nuevoAbono"],
+        "parameters": [{
+          "name": "abono",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/nuevoAbono"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "retorna el detalle del movimiento generado",
+            "schema": {
+              "$ref": "#/components/schemas/nuevoAbono_output"
+            }
+          },
+          "400": {
+            "description": "Mensaje de salida, con descripcion del error",
+            "schema": {
+              "$ref": "#/components/schemas/mensajeGral_output"
+            }
+          },
+          "401": {
+            "description": "Credenciales invalidas",
+            "schema": {
+              "$ref": "#/components/schemas/mensajeGral_output"
+            }
+          },
+          "403": {
+            "description": "Operacion no permitida",
+            "schema": {
+              "$ref": "#/components/schemas/mensajeGral_output"
+            }
+          }
+        }
+      }
+    },
+    "api/cargo": {
+      "post": {
+        "tags": ["nuevoCargo"],
+        "parameters": [{
+          "name": "cargo",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/nuevoCargo"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "retorna el detalle del movimiento generado",
+            "schema": {
+              "$ref": "#/components/schemas/nuevoCargo_output"
+            }
+          },
+          "400": {
+            "description": "Mensaje de salida, con descripcion del error",
+            "schema": {
+              "$ref": "#/components/schemas/mensajeGral_output"
+            }
+          },
+          "401": {
+            "description": "Credenciales invalidas",
+            "schema": {
+              "$ref": "#/components/schemas/mensajeGral_output"
+            }
+          },
+          "403": {
+            "description": "Operacion no permitida",
+            "schema": {
+              "$ref": "#/components/schemas/mensajeGral_output"
+            }
+          }
+        }
+      }
+    },
+    "api/bajaUsuario": {
+      "post": {
+        "tags": ["baja de Usuario"],
+        "parameters": [{
+          "name": "cargo",
+          "in": "body",
+          "required": false,
+          "schema": {
+            "$ref": "#/components/schemas/bajaUsuario"
+          }
+        }],
+        "responses": {
+          "200": {
+            "description": "retorna el estatus actual del usuario",
+            "schema": {
+              "$ref": "#/components/schemas/bajaUsuario_output"
+            }
+          },
+          "400": {
+            "description": "Mensaje de salida, con descripcion del error",
+            "schema": {
+              "$ref": "#/components/schemas/mensajeGral_output"
+            }
+          },
+          "401": {
+            "description": "Credenciales invalidas",
+            "schema": {
+              "$ref": "#/components/schemas/mensajeGral_output"
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "login": {
+        "type": "object",
+        "required": ["nombreUsuario", "password"],
+        "properties": {
+          "nombreUsuario": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
+      "registrarUsuario": {
+        "type": "object",
+        "required": ["nombres", "apellidos", "RFC", "nombreUsuario", "password", "producto", "saldo"],
+        "properties": {
+          "nombres": {
+            "type": "string"
+          },
+          "apellidos": {
+            "type": "string"
+          },
+          "telefono": {
+            "type": "string"
+          },
+          "RFC": {
+            "type": "string"
+          },
+          "direccion": {
+            "type": "string"
+          },
+          "nombreUsuario": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "producto": {
+            "type": "string"
+          },
+          "saldo": {
+            "type": "number"
+          }
+        }
+      },
+      "editarUsuario": {
+        "type": "object",
+        "required": [],
+        "properties": {
+          "telefono": {
+            "type": "string"
+          },
+          "direccion": {
+            "type": "string"
+          }
+        }
+      },
+      "setAuthUsuario": {
+        "type": "object",
+        "required": ["RFC", "nombreUsuario", "password"],
+        "properties": {
+          "RFC": {
+            "type": "string"
+          },
+          "nombreUsuario": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
+      "altaCuentaUsuario": {
+        "type": "object",
+        "required": ["producto", "saldo", "nip"],
+        "properties": {
+          "producto": {
+            "type": "string"
+          },
+          "saldo": {
+            "type": "number"
+          },
+          "nip": {
+            "type": "string"
+          }
+        }
+      },
+      "nuevoAbono": {
+        "type": "object",
+        "required": ["cuentaOrigen", "cuentaDestino", "monto", "concepto","operacion"],
+        "properties": {
+          "cuentaOrigen": {
+            "type": "string"
+          },
+          "cuentaDestino": {
+            "type": "string"
+          },
+          "monto": {
+            "type": "number"
+          },
+          "concepto": {
+            "type": "string"
+          },
+          "referencia": {
+            "type": "string"
+          },
+          "operacion": {
+            "type": "string"
+          }
+        }
+      },
+      "nuevoCargo": {
+        "type": "object",
+        "required": ["cuentaOrigen", "cuentaDestino", "monto", "concepto", "operacion"],
+        "properties": {
+          "cuentaOrigen": {
+            "type": "number"
+          },
+          "cuentaDestino": {
+            "type": "number"
+          },
+          "monto": {
+            "type": "number"
+          },
+          "concepto": {
+            "type": "string"
+          },
+          "referencia": {
+            "type": "string"
+          },
+          "operacion": {
+            "type": "string"
+          }
+        }
+      },
+      "bajaUsuario": {
+        "type": "object",
+        "required": [],
+        "properties": {}
+      },
+      "mensajeGral_output": {
+        "type": "object",
+        "required": [],
+        "properties": {
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "registrarUsuario_output": {
+        "type": "object",
+        "required": [],
+        "properties": {
+          "nombres": {
+            "type": "string"
+          },
+          "apellidos": {
+            "type": "string"
+          },
+          "telefono": {
+            "type": "string"
+          },
+          "RFC": {
+            "type": "string"
+          },
+          "direccion": {
+            "type": "string"
+          },
+          "productos": {
+            "type": "array"
+          }
+        }
+      },
+      "login_output": {
+        "type": "object",
+        "required": [],
+        "properties": {
+          "token": {
+            "type": "string"
+          }
+        }
+      },
+      "editarUsuario_output": {
+        "type": "object",
+        "required": [],
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "nombres": {
+            "type": "string"
+          },
+          "apellidos": {
+            "type": "string"
+          },
+          "telefono": {
+            "type": "string"
+          },
+          "RFC": {
+            "type": "string"
+          },
+          "direccion": {
+            "type": "string"
+          },
+          "productos": {
+            "type": "array"
+          },
+          "cuentas": {
+            "type": "array"
+          }
+        }
+      },
+      "nuevoAbono_output": {
+        "type": "object",
+        "required": [],
+        "properties": {
+          "cuentaOrigen": {
+            "type": "string"
+          },
+          "cuentaDestino": {
+            "type": "string"
+          },
+          "monto": {
+            "type": "number"
+          },
+          "concepto": {
+            "type": "string"
+          },
+          "referencia": {
+            "type": "string"
+          },
+          "fechaAplicacion": {
+            "type": "date"
+          },
+          "status": {
+            "type": "string"
+          },
+          "_id": {
+            "type": "string"
+          }
+        }
+      },
+      "nuevoCargo_output": {
+        "type": "object",
+        "required": [],
+        "properties": {
+          "cuentaOrigen": {
+            "type": "string"
+          },
+          "cuentaDestino": {
+            "type": "string"
+          },
+          "monto": {
+            "type": "number"
+          },
+          "concepto": {
+            "type": "string"
+          },
+          "referencia": {
+            "type": "string"
+          },
+          "fechaAplicacion": {
+            "type": "date"
+          },
+          "status": {
+            "type": "string"
+          },
+          "_id": {
+            "type": "string"
+          }
+        }
+      },
+      "bajaUsuario_output": {
+        "type": "object",
+        "required": [],
+        "properties": {
+          "estatus": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  }
+}
