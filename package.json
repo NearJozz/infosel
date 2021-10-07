@@ -8,7 +8,7 @@
     "dev": "node --experimental-json-modules index.mjs",
     "debug": "node --inspect --experimental-json-modules index.mjs",
     "test": "node  --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "setup":"node --experimental-json-modules setup.js"
+    "setup": "node --experimental-json-modules setup.js"
   },
   "jest": {
     "transform": {}
