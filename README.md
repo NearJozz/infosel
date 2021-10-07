@@ -7,8 +7,8 @@ La Aplicacion consta de servicio API, documentación, set de pruebas y configura
 Empecemos!
 
 Pre-requisitos:
-1.- Clonar el proyecto a tu local.
-2.- En la raiz del proyecto agregar un archivo .env
+1. Clonar el proyecto a tu local.
+2. En la raiz del proyecto agregar un archivo .env
   con las siguientes claves, los valores son ejemplos.
 
   ( Ejecución sin Docker )
@@ -49,8 +49,8 @@ Pre-requisitos:
 
 Cualquier duda o comentario, siempre seran bien aceptados. Sientete libre de escribirme a mi correo.
 --------------------------------
-  Wake up Neo
-  The Matrix has you...
-  Follow the white rabbit...
-  Knock Knock Neo.
+  >Wake up Neo
+  >The Matrix has you...
+  >Follow the white rabbit...
+  >Knock Knock Neo.
 -------------------------------
