@@ -8,7 +8,7 @@
   "host": "localhost:8080",
   "basePath": "/",
   "paths": {
-    "api/registrarUsuario": {
+    "/api/registrarUsuario": {
       "post": {
         "tags": ["registrarUsuario"],
         "parameters": [{
@@ -35,7 +35,7 @@
         }
       }
     },
-    "api/login": {
+    "/api/login": {
       "post": {
         "tags": ["login"],
         "parameters": [{
@@ -68,7 +68,7 @@
         }
       }
     },
-    "api/editarUsuario": {
+    "/api/editarUsuario": {
       "post": {
         "tags": ["editarUsuario"],
         "parameters": [{
@@ -101,7 +101,7 @@
         }
       }
     },
-    "api/abono": {
+    "/api/abono": {
       "post": {
         "tags": ["nuevoAbono"],
         "parameters": [{
@@ -140,7 +140,7 @@
         }
       }
     },
-    "api/cargo": {
+    "/api/cargo": {
       "post": {
         "tags": ["nuevoCargo"],
         "parameters": [{
@@ -179,7 +179,7 @@
         }
       }
     },
-    "api/bajaUsuario": {
+    "/api/bajaUsuario": {
       "post": {
         "tags": ["baja de Usuario"],
         "parameters": [{
