@@ -11,14 +11,14 @@ Pre-requisitos:
 2.- En la raiz del proyecto agregar un archivo .env
   con las siguientes claves, los valores son ejemplos.
 
-( Ejecución sin Docker )
---------------------------------
-  DB_ADDRESS = 127.0.0.1
-  DB_PORT = 27017
-  DB = test
-  HTTP_PORT = 8080
-  SECRETMASTERKEY=s3cr3t0
-  JWT_EXPIRE = 2h
+  ( Ejecución sin Docker )
+  --------------------------------
+    DB_ADDRESS = 127.0.0.1
+    DB_PORT = 27017
+    DB = test
+    HTTP_PORT = 8080
+    SECRETMASTERKEY=s3cr3t0
+    JWT_EXPIRE = 2h
   -------------------------------
   ( Ejecución con Docker )
   --------------------------------
