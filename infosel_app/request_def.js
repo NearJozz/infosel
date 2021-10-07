@@ -1,0 +1,79 @@
+const requests={
+  login:{
+    nombreUsuario:{type:String,isRequired:true},
+    password:{type:String,isRequired:true}
+  },
+  registrarUsuario:{
+    nombres: {
+      type: String,
+      isRequired: true
+    },
+    apellidos:{
+      type:String,
+      isRequired:true
+    },
+    telefono:{
+      type:String,
+      isRequired:false
+    },
+    RFC:{
+      type:String,
+      isRequired:true
+    },
+    direccion:{
+      type:String,
+      isRequired:false
+    },
+    nombreUsuario:{type:String,isRequired:true},
+    password:{type:String,isRequired:true},
+    producto:{type:String,isRequired:true},
+    saldo:{type:Number,isRequired:true},
+
+  },
+  editarUsuario:{
+    user:{type:Object,isRequired:true},
+    jwtReversa:{type:Object,isRequired:true},
+    telefono:{type:String,isRequired:false},
+    direccion:{type:String,isRequired:false}
+  },
+  setAuthUsuario:{
+    RFC:{type:String,isRequired:true},
+    nombreUsuario:{type:String,isRequired:true},
+    password:{type:String,isRequired:true}
+  },
+  altaCuentaUsuario:{
+    producto:{type:String,isRequired:true},
+    saldo:{type:Number,isRequired:true},
+    nip:{type:String,isRequired:true}
+  },
+  perfilUsuario:{
+    user:{type:Object,isRequired:true},
+    jwtReversa:{type:Object,isRequired:true},
+  },
+  bajaUsuario:{
+    user:{type:Object,isRequired:true},
+    jwtReversa:{type:Object,isRequired:true},
+  },
+  nuevoAbono:{
+    user:{type:Object,isRequired:true},
+    jwtReversa:{type:Object,isRequired:true},
+    cuentaOrigen:{type:String,isRequired:true},
+    cuentaDestino:{type:String,isRequired:true},
+    monto:{type:Number,isRequired:true},
+    concepto:{type:String,isRequired:true},
+    referencia:{type:String,isRequired:false},
+    operacion:{type:String,isRequired:true}
+  },
+  nuevoCargo:{
+    user:{type:Object,isRequired:true},
+    jwtReversa:{type:Object,isRequired:true},
+    cuentaOrigen:{type:Number,isRequired:true},
+    cuentaDestino:{type:Number,isRequired:true},
+    monto:{type:Number,isRequired:true},
+    concepto:{type:String,isRequired:true},
+    referencia:{type:String,isRequired:false},
+    operacion:{type:String,isRequired:true}
+  }
+}
+
+export default requests;
