@@ -1,0 +1,33 @@
+{
+  "name": "demolab2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --experimental-json-modules index.mjs",
+    "debug": "node --inspect --experimental-json-modules index.mjs",
+    "test": "node  --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "setup":"node --experimental-json-modules setup.js"
+  },
+  "jest": {
+    "transform": {}
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "10.0.0",
+    "express": "4.17.1",
+    "jsonwebtoken": "8.5.1",
+    "mongodb": "4.1.2",
+    "node-model-validation": "1.0.1",
+    "swagger-ui-express": "4.1.6"
+  },
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-preset-env": "1.7.0",
+    "jest": "27.2.4",
+    "superagent": "6.1.0",
+    "supertest": "6.1.6"
+  }
+}
